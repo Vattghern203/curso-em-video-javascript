@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(82, 77, 119);
+            color: whitesmoke;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>DOM no JavaScript</h1>
+    <p>Aqui vai um resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
+    <div id="msg">click here</div>
+    <div name="caixa"> essa é uma caixa div</div>
+    <div id="teste">teste</div>
+
+    <script>
+        var p1 = window.document.getElementsByTagName('p')[1]
+        window.document.write(p1.innerText)
+        var corpo = window.document.body
+        p1.style.color = 'gray'
+        var d = document.getElementById('msg')
+        d.style.background = 'purple'
+        d.style.borderRadius = '5px'
+        d.style.padding = '10px 12px'
+        d.innerText = 'Waiting...'
+        var c = window.document.getElementsByName('caixa')[0]
+        c.style.background = 'pink'
+
+        var t = window.document.querySelector('div#teste')
+        t.style.background = 'whitesmoke'
+        t.style.color = 'darkgrey'
+        t.style.borderRadius = '5px'
+    </script>
+</body>
+</html>
