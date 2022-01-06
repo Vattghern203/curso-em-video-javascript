@@ -5,13 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM pt. 3</title>
+    <style>
+        body {
+            background-color: rgb(61, 61, 61);
+            color: whitesmoke;
+        }
+
+        .escuro {
+            background-color: black;
+            color: white;
+        }
+
+        .claro {
+            background-color: white;
+            color: black;
+        }
+
+        .tema-btn {
+            display: block;
+        }
+    </style>
 </head>
-<body>
-    <h1>Somando Valores</h1>
-    <input type="number" name="n1" id="n1">
-    <input type="number" name="n2" id="n2">
-    <input type="button" value="somar" onclick='somar()'>
-    <div id="res"></div>
+<body id="corpo">
+    <main id="main" class="escuro">
+        <h1>Somando Valores</h1>
+        <input type="number" name="n1" id="n1">
+        <input type="number" name="n2" id="n2">
+        <input type="button" value="somar" onclick='somar()'>
+        <input id="tema-btn" type="button" value="tema_claro" onclick='tema_claro()' ondblclick="tema_escuro()">
+        <div id="res"></div>
+    </main>
 
     <script>
         function somar() {
@@ -25,6 +48,21 @@
 
             res.innerHTML = `O resultado da soma entre ${x} e ${y} é igual a: ${s}.`
         }
+
+        function tema_claro() {
+            var principal = window.document.getElementById('main')
+
+            principal.className = 'claro'
+            window.document.getElementById('tema-btn').style.display = 'hidden'
+        }
+
+        function tema_escuro() {
+            var principal = window.document.getElementById('main')
+
+            principal.className = 'escuro'
+            
+        }
+
     </script>
 </body>
 </html>
