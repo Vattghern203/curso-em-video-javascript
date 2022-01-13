@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onde no mundo?</title>
+</head>
+<body>
+    <h1>Seja bem-vindo</h1>
+    <p>Nome: <br></p>
+    <input type="text" name="nome" id="nome"> <br>
+    <p>País: <br></p>
+    <input type="text" name="country" id="country"> <br>
+    <input type="button" value="Confirmar" onclick="patriota()">
+
+    <h2>Resultado:</h2>
+    <div id="texto">
+        
+    </div>
+
+    <script>
+        function patriota() {
+            var pais = window.document.getElementById('country')
+            var txt = window.document.getElementById('texto')
+            if (pais == 'Brasil') {
+                nome = window.document.getElementById('nome')
+                txt.innerText += `<p>Olá ${nome}, você é um(a) pessoa como a gente S2.</p>`
+            }
+            if (pais == 'Alemanha') {
+                txt.innerText += '<p>NAZISTA!</p>'
+            } 
+            else {
+                nome = window.document.getElementById('nome')
+                txt.innerText += `<p>Felizmente você não é BR, ${nome}</p>`
+            }
+        }
+    </script>
+</body>
+</html>
