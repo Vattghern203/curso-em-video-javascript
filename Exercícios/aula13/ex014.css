@@ -2,8 +2,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+/*
+day: #ddc570;
+afternoon: #c47021;
+night: #2F2F5E;
+*/
+
 body {
-    background-color: steelblue;
+    background-color: #2F2F5E;
     font-family: 'Roboto', sans-serif;
     margin: 0;
     color: white;
@@ -17,7 +23,7 @@ header {
 
 main {
     border-radius: 20px;
-    padding: 20px 24px;
+    padding: 30px 38px;
     background-color: white;
     box-shadow: 5px 5px 10px black;
     color: black;
@@ -29,5 +35,21 @@ main {
 footer {
     text-align: center;
     padding: 20px 24px;
+    margin: auto;
+}
+
+.img-center {
+    border-radius: 100%;
+    overflow: hidden;
+    height: 100px;
+    width: 100px;
+}
+
+#cover {
+    border-radius: 100%;
+    background: url('day.jpg');
+    background-size: cover;
+    height: 300px;
+    width: 300px;
     margin: auto;
 }
