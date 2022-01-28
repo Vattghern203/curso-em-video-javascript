@@ -19,9 +19,9 @@ header {
     text-align: center;
 }
 
-main {
+section {
     width: 400px;
-    height: 300px;
+    height: auto;
     border-radius: 7px;
     text-align: center;
     margin: 30px auto;
@@ -31,18 +31,9 @@ main {
     border-spacing: 5px;
 }
 
-main > input {
-    margin: 5px auto;
-}
+img {
 
-#cover {
-    border-radius: 100%;
-    margin: auto;
-    padding: 10px;
-    height: 200px;
-    width: 200px;
-    background-image: url('');
-    background-size: cover;
+    height: 150px;
 }
 
 footer {

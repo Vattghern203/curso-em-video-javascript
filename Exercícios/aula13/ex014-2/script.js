@@ -1,64 +1,54 @@
-var data = new Date()
-var ano = document.querySelector('#ano')
-var ano_att = data.getFullYear()
-var txt = document.querySelector('#txt')
+function verificar() {
+    var data = new Date()
+    var ano = data.getFullYear()
+    var fano = window.document.getElementById('txtano')
+    var res = document.querySelector('div#res')
 
-function persona() {  
+    if (fano.value.lenght == 0 || Number(fano.value) > ano) {
+        window.alert('Erro! Verifique seus dados e tente novamente.')
 
-    if (ano.value.lenght == 0 || Number(ano.value) > ano_att) {
-        window.alert('Eita! Parece que temos um viajante do tempo entre nós. Tente denovo caso não o seja.')
-
-    } 
-    
-    else {
-        var sexo = document.getElementsByName('sexo')
-        var idade = ano_att - Number(ano.value)
-        var nome = document.querySelector('#nome')
-        var cover = document.getElementById('cover')
+    } else {
+        var fsex = window.document.getElementsByName('radsex')
+        var idade = ano - Number(fano.value)
         var genero = ""
+        var img = document.createElement('img')
+        img.setAttribute('id', 'foto')
 
-        
-        
-        if (sexo[0].checked) {
-                if (idade >= 3 && idade < 12) {
-                    txt.innerHTML = `<p> ${nome.value}, você é uma menina de ${idade} anos. </p>`
-                    cover.style.backgroundImage = "url('imgs/young_lady.jpeg')"
-
-                }
-            
-                else if (idade >= 12 && idade < 59) {
-                    txt.innerHTML = `<p> ${nome.value}, você é uma adolescente de ${idade} anos.`
-            
-                }
-            
-                else if (idade >= 59 && idade < 110) {
-                    txt.innerHTML = `<p> ${nome.value}, você é uma idosa de ${idade} anos.`
-            
-                }
-            
-                else if (idade >= 0 && idade < 3) {
-                    txt.innerHTML = `Você é uma bebê de ${idade} ano(s), ${nome.value}.`
-                }
-            }
-        }
-
-        if (sexo[1].checked) {
+        if (fsex[0].checked) {
+            genero = 'Mulher'
             if (idade >= 3 && idade < 12) {
-                txt.innerHTML = `<p> ${nome.value}, você é um menino de ${idade} anos </p>`
+                img.setAttribute('src', 'young_lady.png')
+
+            } else if (idade >= 12 && idade < 59) {
+                img.setAttribute('src', 'teen_girl.png')
+
+            } else if (idade >= 59 && idade < 110) {
+                img.setAttribute('src', 'woman.png')
+
+            } else if (idade >= 0 && idade < 3) {
+                img.setAttribute('src', 'oldlady.png')
             }
         
-            else if (idade >= 12 && idade < 59) {
-                txt.innerHTML = `<p> ${nome.value}, você é um adolescente de ${idade} anos.`
+        } else if (fsex[1].checked) {
+            genero = 'Homem'
+            if (idade >= 3 && idade < 12) {
+                img.setAttribute('src', 'baby_boy.png')
+            } else if (idade >= 12 && idade < 59) {
+                //Crinça
+                img.setAttribute('src', 'young_boy.png')
+
+            } else if (idade >= 59 && idade < 110) {
+                //Jovem
+                img.setAttribute('src', 'teen_boy.png')
         
-            }
-        
-            else if (idade >= 59 && idade < 110) {
-                txt.innerHTML = `<p> ${nome.value}, você é um idoso de ${idade} anos.`
-        
-            }
-        
-            else if (idade >= 0 && idade < 3) {
-                txt.innerHTML = `Você é um bebê de ${idade} ano(s), ${nome.value}.`
+            } else if (idade >= 0 && idade < 3) {
+                //Idoso
+                img.setAttribute('src', 'oldman.png')
             }
         }
+
+        res.style.textAlign = 'center'
+        res.innerHTML = `Detectamos um(a) ${genero} com ${idade} anos.`
+        res.appendChild(img)
+    } 
 }

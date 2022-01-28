@@ -12,21 +12,26 @@
         <h1>Welcome to PersonaCheck</h1>
         <p>Digite seu ano de nascimento e gênero nos campos abaixo</p>
     </header>
-    <main>
-        <p><input type="text" name="nome" id="nome" placeholder="Seu Nome..."></p>
-        <p><input type="number" name="ano" id="ano" placeholder="Seu Ano de Nascimento..."></p>
-        <label>Sexo: </label>
-        <label for="fem">Feminino</label>
-        <input type="radio" name="sexo" id="fem" checked>
-        <label for="masc">Masculino</label>
-        <input type="radio" name="sexo" id="masc">
-        <p><button type="button" onclick="persona()">Ok</button></p>
-        <div id="txt">
-            <div id="cover">
-                
-            </div>
+    <section>
+        <div>
+            <p><input type="text" name="nome" id="nome" placeholder="Seu Nome..."></p>
+
+            <p><input type="number" name="txtano" id="txtano" placeholder="Seu Ano de Nascimento..."></p>
+
+            <label>Sexo: </label>
+
+            <label for="fem">Feminino</label>
+            <input type="radio" name="radsex" id="fem" checked>
+
+            <label for="masc">Masculino</label>
+            <input type="radio" name="radsex" id="mas">
+
+            <p><button type="button" onclick="verificar()">OK</button></p>
         </div>
-    </main>
+        <div id="res">
+           
+        </div>
+    </section>
     <footer>
         <p>&copy; vatt'ghern</p>
     </footer>
