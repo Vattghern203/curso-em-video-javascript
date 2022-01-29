@@ -32,8 +32,9 @@ section {
 }
 
 img {
-
-    height: 150px;
+    border-radius: 100%;
+    padding: 10px 12px;
+    height: 200px;
 }
 
 footer {
