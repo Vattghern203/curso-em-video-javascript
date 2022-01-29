@@ -18,40 +18,53 @@ function verificar() {
         if (fsex[0].checked) {
             genero = 'Mulher'
             if (idade >= 3 && idade < 12) {
+                //Criança
                 img.setAttribute('src', 'young_lady.png')
 
             } else if (idade >= 12 && idade < 29) {
+                //Jovem
                 img.setAttribute('src', 'teen_girl.png')
 
-            } else if (idade >= 30 && idade < 59) {
+            } else if (idade >= 30 && idade < 40) {
+                //Adulta
                 img.setAttribute('src', 'woman.png')
 
+            } else if (idade >= 40 && idade < 59) {
+                //Meia-Idade
+                img.setAttribute('src', 'midage_woman.png')
+
             } else if (idade >= 59) {
+                //Idosa
                 img.setAttribute('src', 'oldlady.png')
 
             } else if (idade >= 0 && idade < 3) {
+                //Bebê
                 img.setAttribute('src', 'baby_girl.png')
             }
         
         } else if (fsex[1].checked) {
             genero = 'Homem'
             if (idade >= 3 && idade < 12) {
-                img.setAttribute('src', 'baby_boy.png')
+                img.setAttribute('src', 'young_boy.png')
 
             } else if (idade >= 12 && idade < 29) {
                 //Crinça
                 img.setAttribute('src', 'teen_boy.png')
 
-            } else if (idade >= 30 && idade < 59) {
+            } else if (idade >= 30 && idade < 40) {
                 img.setAttribute('src', 'man.png')
 
-            } else if (idade >= 59) {
-                //Velho
-                img.setAttribute('src', 'oldman.png')
+            } else if (idade >= 40 && idade < 59) {
+                //Meia-Idade
+                img.setAttribute('src', 'midage_man.png')
         
-            } else if (idade >= 0 && idade < 3) {
+            } else if (idade >= 59) {
                 //Idoso
-                img.setAttribute('src', 'oldman.png')
+                img.setAttribute('src', 'odlman.png')
+            
+            } else if (idade >= 0 && idade < 3) {
+                //Bebê
+                img.setAttribute('src', 'baby_boy.png')
             }
         }
 
