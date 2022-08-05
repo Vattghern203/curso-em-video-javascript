@@ -30,22 +30,35 @@ function addNumber () {
         console.log(numberArray)
 
         resultBtn.value = numberArray
+
+        inputNumber.value = ''
+        
+        inputNumber.focus()
     }
 
     submitBtn.addEventListener("click", retornaResultado)
 }
 
 function retornaResultado() {
-    const container = document.querySelector('#container-right')
 
-    const paragafo = document.createElement("p")
+    if (numberArray.length == 0) {
+        
+        window.alert("Não há números para finalizar :p")
 
-    numberArray.forEach(element => {
-        const soma = element += element
-        const razao = soma / Array.lenght
-        const maior = Math.max(Array)
-        const menor = Math.min(Array)
-    });
+    } else {
 
-    
+        const container = document.querySelector('#container-right')
+
+        let soma = 0
+
+        numberArray.forEach(element => soma += parseInt(element));
+
+        numberArray.sort()
+
+        container.innerHTML = `A soma de todos os termos é igual a: ${soma}. <br>
+                            A razão desse array é: ${Math.ceil(soma/numberArray.length)}. <br>
+                            O maior termo é: ${numberArray[numberArray.length -1]}. <br>
+                            O menor termo é: ${numberArray[0]}. <br>`
+
+        }
 }
