@@ -2,6 +2,7 @@ let txtBoard = document.getElementById('text-board')
 let submitBtn = document.querySelector('#submit-btn')
 let inputNumber = document.getElementById('input-number')
 let resultBtn = document.getElementById('result-btn')
+let container = document.querySelector('#container-right')
 let numberArray = []
 
 function addNumber () {
@@ -25,11 +26,13 @@ function addNumber () {
 
         txtBoard.add(option)
 
-        numberArray.push(inputNumber.value)
+        numberArray.push(Number(inputNumber.value))
+
+        numberArray.sort()
+
+        container.innerHTML = ''
 
         console.log(numberArray)
-
-        resultBtn.value = numberArray
 
         inputNumber.value = ''
         
@@ -47,18 +50,25 @@ function retornaResultado() {
 
     } else {
 
-        const container = document.querySelector('#container-right')
-
         let soma = 0
+        let maior = numberArray[0]
+        let menor = numberArray[0]
 
-        numberArray.forEach(element => soma += parseInt(element));
+        for(let pos in numberArray) {
 
-        numberArray.sort()
+            soma += numberArray[pos]
+
+            if (numberArray[pos] > maior)
+                maior = numberArray[pos]
+            
+            if (numberArray[pos] < menor)
+                menor = numberArray[pos]
+        }
 
         container.innerHTML = `A soma de todos os termos é igual a: ${soma}. <br>
                             A razão desse array é: ${Math.ceil(soma/numberArray.length)}. <br>
-                            O maior termo é: ${numberArray[numberArray.length -1]}. <br>
-                            O menor termo é: ${numberArray[0]}. <br>`
+                            O maior termo é: ${maior}. <br>
+                            O menor termo é: ${menor}. <br>`
 
         }
 }
